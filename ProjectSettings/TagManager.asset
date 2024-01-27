@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Bullets
+  - Liquid
+  - Walls
+  - Environment
   - 
   - 
   - 
