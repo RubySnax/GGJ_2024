@@ -10,9 +10,11 @@ public class Interactable : MonoBehaviour
     public KeyCode interactKey2;
     public UnityEvent interactAction;
 
+    SpriteRenderer rend;
+
     void Start()
     {
-        
+        rend = this.gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -24,11 +26,21 @@ public class Interactable : MonoBehaviour
                 interactAction.Invoke();
             }
         }
+
+        if(Input.GetKeyDown(interactKey1) && isInRange)
+        {
+            rend.enabled = !rend.enabled;
+        }
+
+        if(isInRange == false)
+        {
+            rend.enabled = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"));
+        if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;
             Debug.Log("Player now in range");
@@ -40,4 +52,5 @@ public class Interactable : MonoBehaviour
         isInRange = false;
         Debug.Log("Player now NOT in range");
     }
+
 }

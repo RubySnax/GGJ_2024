@@ -62,3 +62,6 @@ TagManager:
   - name: PlayerLayer
     uniqueID: 2923597849
     locked: 0
+  - name: ItemLayer
+    uniqueID: 3563165569
+    locked: 0
