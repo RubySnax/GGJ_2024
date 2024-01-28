@@ -10,6 +10,7 @@ public class Interactable : MonoBehaviour
     public KeyCode interactKey2;
     public UnityEvent interactAction;
     public GameObject itemInside;
+    public AudioSource audioSource;
 
     SpriteRenderer rend;
 
@@ -17,6 +18,7 @@ public class Interactable : MonoBehaviour
     void Start()
     {
         rend = itemInside.gameObject.GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -32,6 +34,7 @@ public class Interactable : MonoBehaviour
         if(Input.GetKeyDown(interactKey1) && isInRange)
         {
             rend.enabled = !rend.enabled;
+            audioSource.Play();
         }
 
         if(isInRange == false)

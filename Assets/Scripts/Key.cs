@@ -6,11 +6,13 @@ public class Key : MonoBehaviour
 {
 
     public GameObject door;
+    public AudioSource audioSource;
     SpriteRenderer rend;
 
     public void Start()
     {
         rend = door.gameObject.GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,7 +24,9 @@ public class Key : MonoBehaviour
             door.GetComponent<BoxCollider2D>().enabled = false;
             door.GetComponent<BoxCollider2D>().enabled = false;
             rend.enabled = false;
+            audioSource.Play();
             this.gameObject.SetActive(false);
+
         }
     }
 }

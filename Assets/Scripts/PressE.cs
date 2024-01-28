@@ -22,6 +22,11 @@ public class PressE : MonoBehaviour
         {
             rend.enabled = false;
         }
+
+        if (isInRange == true)
+        {
+            rend.enabled = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
