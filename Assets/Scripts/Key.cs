@@ -15,6 +15,11 @@ public class Key : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
@@ -24,7 +29,6 @@ public class Key : MonoBehaviour
             door.GetComponent<BoxCollider2D>().enabled = false;
             door.GetComponent<BoxCollider2D>().enabled = false;
             rend.enabled = false;
-            audioSource.Play();
             this.gameObject.SetActive(false);
 
         }

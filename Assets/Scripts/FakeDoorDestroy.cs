@@ -12,6 +12,12 @@ public class FakeDoorDestroy : MonoBehaviour
         rend = this.gameObject.GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
     }
+
+    private void Update()
+    {
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

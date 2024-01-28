@@ -10,6 +10,11 @@ public class RealDoor : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
+
+    private void Update()
+    {
+        
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -18,4 +23,6 @@ public class RealDoor : MonoBehaviour
             audioSource.Play();
         }
     }
+
+
 }
