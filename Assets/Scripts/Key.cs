@@ -6,13 +6,12 @@ public class Key : MonoBehaviour
 {
 
     public GameObject door;
-    public AudioSource audioSource;
+    [SerializeField] private AudioSource keySoundEffect;
     SpriteRenderer rend;
 
     public void Start()
     {
         rend = door.gameObject.GetComponent<SpriteRenderer>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -24,9 +23,9 @@ public class Key : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            keySoundEffect.Play();
             Debug.Log("key picked up");
 
-            door.GetComponent<BoxCollider2D>().enabled = false;
             door.GetComponent<BoxCollider2D>().enabled = false;
             rend.enabled = false;
             this.gameObject.SetActive(false);
