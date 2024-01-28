@@ -9,12 +9,14 @@ public class Interactable : MonoBehaviour
     public KeyCode interactKey1;
     public KeyCode interactKey2;
     public UnityEvent interactAction;
+    public GameObject itemInside;
 
     SpriteRenderer rend;
 
+
     void Start()
     {
-        rend = this.gameObject.GetComponent<SpriteRenderer>();
+        rend = itemInside.gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()

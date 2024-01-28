@@ -59,9 +59,12 @@ TagManager:
   - name: BulletsLayer
     uniqueID: 4095180687
     locked: 0
+  - name: ItemLayerBelow
+    uniqueID: 4132083347
+    locked: 0
   - name: PlayerLayer
     uniqueID: 2923597849
     locked: 0
-  - name: ItemLayer
+  - name: ItemLayerAbove
     uniqueID: 3563165569
     locked: 0
